@@ -11,7 +11,7 @@ export const RenderRoutes = (routes: RoutePropsI[]) => {
             key={index}
             path={route.path}
             element={
-                <Suspense fallback={<><h1>Loading...</h1></>}>
+                <Suspense>
                     <Guard>
                         <Layout>
                             {route.children ? <Outlet /> : <Component />}

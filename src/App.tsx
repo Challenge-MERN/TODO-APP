@@ -4,8 +4,7 @@ import { routes } from './const/Routes';
 
 
 function App() {
-  // const token = sessionStorage.getItem('ACCESS_TOKEN');
-
+  
   return (
     <BrowserRouter>
       <Routes>

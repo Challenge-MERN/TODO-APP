@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import './Navbar.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PATHS } from '../../const/Paths';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { logOut as logout } from '../../services/users';
 
 export const Navigation = () => {
+    const navigate = useNavigate();
 
     const routes = [
         {
@@ -29,9 +32,11 @@ export const Navigation = () => {
 
     ]
 
-    const AppName = 'Pendiente';
+    const AppName = 'TODO | APP';
 
     const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
+    const actualDate = new Date().getFullYear();
+    const USER = sessionStorage.getItem('USER');
 
     const handleOffcanvasToggle = () => {
         setIsOffcanvasOpen((prevState) => !prevState);
@@ -42,7 +47,8 @@ export const Navigation = () => {
     };
 
     const logOut = () => {
-        // Lógica para cerrar sesión
+        logout();
+        navigate('/');
     };
 
     return (
@@ -54,6 +60,21 @@ export const Navigation = () => {
                             <span className="fs-4">{AppName}</span>
                         </p>
                         <hr />
+                        <div className='d-flex justify-content-center'>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="" className='text-light' style={{border: 'none'}} id="dropdown-basic">
+                                    <strong className='m-5'>{USER}</strong>
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-2">Nueva Tarea</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Configuración</Dropdown.Item>
+                                    <hr />
+                                    <Dropdown.Item onClick={logOut}>Cerrar Sesión</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <hr />
                         <ul className="nav nav-pills flex-column mb-auto">
                             {routes.map((route, index) => (
                                 <li key={index}>
@@ -62,6 +83,9 @@ export const Navigation = () => {
                             ))}
                         </ul>
                         <hr />
+                        <span className="text-center text-secondary pt-2 pb-2" style={{ fontSize: 12 }}>&copy; {actualDate} TODO | APP
+                        </span>
+
                     </div>
                 </div>
 

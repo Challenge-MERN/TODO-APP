@@ -1,8 +1,9 @@
+import { TaskGrid } from '../components/tasks/TaskGrid';
 
 const PendingTasks = () => {
   return (
     <div>
-      <h1>Tareas pendientes</h1>
+      <TaskGrid />
     </div>
   )
 }

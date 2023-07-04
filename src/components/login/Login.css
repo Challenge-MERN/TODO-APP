@@ -1,0 +1,68 @@
+#principal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+#form {
+    padding-bottom: 1rem;
+    width: 55vw;
+    height: 55vh;
+    background-color: rgba(21, 16, 16, 0.879);
+    border-radius: 1.5rem 1.5rem 0 1.5rem;
+    box-shadow: 15px 15px 15px 5px rgba(9, 0, 59, 0.6);
+}
+
+#userName, #pass {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 0 2rem;
+    color: white;
+}
+
+#alert {
+    padding: 1rem 2rem 0 2rem;
+    text-align: center;
+}
+
+#submit {
+    margin: 1rem;
+    text-align: center;
+}
+
+#title {
+    margin-top: 1rem;
+    color: white;
+}
+
+#sign-up {
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#registrate {
+    text-decoration: none;
+    color: rgb(0, 211, 0);
+}
+
+#forgot {
+    text-align: center;
+    color: white;
+}
+
+#f-pass {
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+
+#formulario {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}

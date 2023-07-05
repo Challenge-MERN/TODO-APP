@@ -2,7 +2,7 @@ import { TaskGrid } from '../components/tasks/TaskGrid';
 
 const PendingTasks = () => {
   return (
-    <div>
+    <div className='text-center'>
       <TaskGrid />
     </div>
   )

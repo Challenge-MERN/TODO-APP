@@ -4,6 +4,7 @@ import { PendingTasksI } from '../interfaces/Tasks';
 
 export const useFetchPendingTasks = ( userName: string ) => {
     const taskI: PendingTasksI[] = [];
+    const [isLoading, setIsLoading] = useState(true);
     const [dataResponse, setDataResponse] = useState({
         data: taskI,
         message: ''
@@ -14,13 +15,16 @@ export const useFetchPendingTasks = ( userName: string ) => {
         setDataResponse({
             data: response.data,
             message: response.message
-        }
-        );
+        });
+        setIsLoading(false);
     }
 
     useEffect(() => {
         getPendingTasks();
     },[]);
 
-    return dataResponse; 
+    return {
+        dataResponse,
+        isLoading
+    }; 
 }

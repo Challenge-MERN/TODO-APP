@@ -6,7 +6,7 @@ const Principal = ({ children }: PrincipalPropsI) => {
         <>
             <div className='d-flex justify-content-start'>
                 <Navigation />
-                <div className='border border-danger w-100 p-5'>
+                <div className='w-100 p-5'>
                     {children}
                 </div>
             </div>

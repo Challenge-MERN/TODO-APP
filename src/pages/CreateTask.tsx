@@ -1,9 +1,11 @@
+import { TaskForm } from "../components/tasks/TaskForm";
 
 
 const CreateTask = () => {
   return (
-    <div>
-        <h1>Created Task</h1>
+    <div id="father" className="h-100">
+      <h1 className="text-center">Nueva Tarea</h1>
+      <TaskForm />
     </div>
   )
 }

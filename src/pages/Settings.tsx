@@ -1,8 +1,11 @@
+import { Gear } from "react-bootstrap-icons"
 
 const Settings = () => {
     return (
-        <div>
-            <h1>Settings</h1>
+        <div id="father" className="h-100">
+            <h2>
+                <Gear /> Settings
+            </h2>
         </div>
     )
 }

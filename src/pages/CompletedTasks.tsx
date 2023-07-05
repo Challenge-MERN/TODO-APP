@@ -1,9 +1,11 @@
-
+import { FolderCheck } from "react-bootstrap-icons";
 
 const CompletedTasks = () => {
   return (
-    <div>
-      <h1>Completed Tasks</h1>
+    <div id="father" className="h-100">
+      <h2>
+        <FolderCheck /> Completed Tasks
+      </h2>
     </div>
   )
 }

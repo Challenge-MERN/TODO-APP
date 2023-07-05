@@ -62,13 +62,17 @@ export const Navigation = () => {
                         <hr />
                         <div className='d-flex justify-content-center'>
                             <Dropdown>
-                                <Dropdown.Toggle variant="" className='text-light' style={{border: 'none'}} id="dropdown-basic">
+                                <Dropdown.Toggle variant="" className='text-light' style={{ border: 'none' }} id="dropdown-basic">
                                     <strong className='m-5'>{USER}</strong>
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-2">Nueva Tarea</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Configuración</Dropdown.Item>
+                                    <Dropdown.Item>
+                                        <Link to="/create-task" style={{ textDecoration: 'none', color: 'black' }}>Nueva Tarea</Link>
+                                    </Dropdown.Item>
+                                    <Dropdown.Item to="/settings">
+                                        <Link to="/settings" style={{ textDecoration: 'none', color: 'black' }}>Configuración</Link>
+                                    </Dropdown.Item>
                                     <hr />
                                     <Dropdown.Item onClick={logOut}>Cerrar Sesión</Dropdown.Item>
                                 </Dropdown.Menu>
@@ -78,7 +82,7 @@ export const Navigation = () => {
                         <ul className="nav nav-pills flex-column mb-auto">
                             {routes.map((route, index) => (
                                 <li key={index}>
-                                    <Link to={route.path} className="nav-link" aria-current="page" >{route.name}</Link>
+                                    <Link to={route.path} className="nav-link text-light" aria-current="page" >{route.name}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -128,7 +132,7 @@ export const Navigation = () => {
                             <ul className="nav nav-pills flex-column mb-auto">
                                 {routes.map((route, index) => (
                                     <li key={index}>
-                                        <Link to={route.path} className="nav-link" aria-current="page" >{route.name}</Link>
+                                        <Link to={route.path} className="nav-link text-light" aria-current="page" >{route.name}</Link>
                                     </li>
                                 ))}
                             </ul>

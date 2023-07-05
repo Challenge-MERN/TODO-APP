@@ -3,13 +3,14 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { LoginI, ResponseAuthUserI } from '../../interfaces/User';
 import { useState } from 'react';
-import Alert from 'react-bootstrap/Alert';
+// import Alert from 'react-bootstrap/Alert';
 import { SaveToken } from '../../services/users';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const login = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [show, setShow] = useState(true);
   const navigate = useNavigate();
 
 
@@ -40,8 +41,17 @@ const login = () => {
       SaveToken(data.data);
       navigate('/home');
     } catch (err) {
-      setShow(false)
-      console.error('Catch error: ', err);
+      toast.error('Usuario o Contraseña incorrecto!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      console.log('Catch error: ', err);
     }
   }
 
@@ -87,14 +97,9 @@ const login = () => {
             <div id='forgot'>
               <Link id='f-pass' to=''>Olvide mi contraseña!</Link>
             </div>
-            <section hidden={show} id='alert'>
-              <Alert className='d-flex justify-content-between align-items-center' variant='danger'>
-                Usuario o Contraseña incorrecto!
-                <button type='button' className='btn btn-danger' onClick={() => setShow(true)}>X</button>
-              </Alert>
-            </section>
           </form>
         </div>
+        <ToastContainer />
       </section>
     </div>
   )

@@ -19,3 +19,11 @@ export interface PendingTasksI {
     Status: boolean,
     User_Name: string
 }
+
+export interface NewTaskI {
+    TaskName: string,
+    Description: string,
+    Date: string,
+    Importance: string,
+    UserName: string
+}

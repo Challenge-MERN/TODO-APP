@@ -22,8 +22,8 @@ const login = () => {
   }
 
   const authUser = async (user: string, pass: string) => {
-    loginValue.UserName = user;
-    loginValue.Password = pass;
+    loginValue.UserName = user.trim();
+    loginValue.Password = pass.trim();
     try {
       const response = await fetch(api, {
         method: 'POST',

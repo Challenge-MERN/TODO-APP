@@ -16,3 +16,8 @@ export const getToken = () => {
     const token = sessionStorage.getItem('ACCESS_TOKEN') || '';
     return token;
 }
+
+export const getUserName = () => {
+    const userName = sessionStorage.getItem('USER') || '';
+    return userName;
+}

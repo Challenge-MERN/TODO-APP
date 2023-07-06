@@ -1,22 +1,30 @@
 import { useState, useEffect } from 'react';
-import { PendingTasksI } from "../interfaces/Tasks";
+import { ChangeStatusI, EditTaskI, PendingTasksI } from "../interfaces/Tasks";
 import { getTasksFetchPetitions } from "../helpers/getTasksFetchPetitions";
 
+interface TaskFetchPetitions {
+    method: string,
+    url: string,
+    data?: PendingTasksI | string | ChangeStatusI | EditTaskI
+}
 
-export const useTasksFetchPetitions = (method: string, url: string, data: PendingTasksI | string) => {
+export const useTasksFetchPetitions = ({ method, url, data }: TaskFetchPetitions) => {
     const taskI: PendingTasksI[] = [];
     const [isLoading, setIsLoading] = useState(true);
-    const [dataResponse, setDataResponse] = useState(
-        {
-            status: '',
-            data: ''
-        } || {
-            data: taskI,
-            message: ''
+    const [dataResponse, setDataResponse] = useState({
+            data: {
+                data: taskI,
+                message: ''
+            },
+            status: ''
         });
 
     const doPetition = async () => {
-        const response = await getTasksFetchPetitions({ method, url, data });
+        let response;
+        if(data)
+            response = await getTasksFetchPetitions({ method, url, data});
+        else 
+            response = await getTasksFetchPetitions({ method, url});
         setDataResponse(response);
         setIsLoading(false);
     }

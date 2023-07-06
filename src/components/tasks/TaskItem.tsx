@@ -104,7 +104,7 @@ export const TaskItem = ({ task, updateTasks, allTasks }: TaskItemProps) => {
 
     return (
         <>
-            <div className="list-group-item d-flex justify-content-between border p-3" >
+            <div className="list-group-item d-flex justify-content-between border p-3">
                 <span className="d-flex align-items-center">
                     <EditTask key={task._id} editTask={editTask} task={task} />
                     {task.Task_Name}

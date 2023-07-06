@@ -1,8 +1,8 @@
-import { ChangeStatusI, PendingTasksI, TaskResponseDataI } from '../../interfaces/Tasks';
+import { ChangeStatusI, PendingTasksI, TaskResponseDataI, NewTaskI } from '../../interfaces/Tasks';
 import Swal from 'sweetalert2';
 import { EditTask } from './EditTask';
 import { ShowModal } from './ShowModal';
-import { Trash2Fill, Check2Circle, PencilSquare } from 'react-bootstrap-icons';
+import { Trash2Fill, Check2Circle } from 'react-bootstrap-icons';
 import { getTasksFetchPetitions } from '../../helpers/getTasksFetchPetitions';
 import { METHODS } from '../../const/Methods';
 import { getUserName } from '../../services/users';
@@ -96,16 +96,17 @@ export const TaskItem = ({ task, updateTasks, allTasks }: TaskItemProps) => {
         });
     }
 
-    const editTask = () => {
-        console.log(task);
+    const editTask = (updatedTask: PendingTasksI) => {
+        const updatedTasks = removeTask();
+        updatedTasks.push(updatedTask)
+        updateTasks(updatedTasks);
     }
 
     return (
         <>
             <div className="list-group-item d-flex justify-content-between border p-3" >
                 <span className="d-flex align-items-center">
-                    {/* <button className="btn btn-outline-primary me-2" onClick={editTask} title="Editar"><PencilSquare /></button> */}
-                    <EditTask key={task._id} task={task} />
+                    <EditTask key={task._id} editTask={editTask} task={task} />
                     {task.Task_Name}
                 </span>
                 <div className='p-2'>

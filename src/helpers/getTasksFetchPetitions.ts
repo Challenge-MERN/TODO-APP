@@ -1,11 +1,11 @@
-import { PendingTasksI } from '../interfaces/Tasks';
+import { ChangeStatusI, EditTaskI, PendingTasksI } from '../interfaces/Tasks';
 import { getToken } from '../services/users';
 import { METHODS } from '../const/Methods';
 
 interface TasksPetitionsProps {
     method: string,
     url: string,
-    data?: PendingTasksI | string
+    data?: PendingTasksI | string | ChangeStatusI | EditTaskI
 }
 
 export const getTasksFetchPetitions = async ({ method, url, data }: TasksPetitionsProps) => {

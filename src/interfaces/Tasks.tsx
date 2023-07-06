@@ -27,3 +27,17 @@ export interface NewTaskI {
     Importance: string,
     UserName: string
 }
+
+export interface ChangeStatusI {
+    UserName: string,
+    TaskName: string
+}
+
+export interface EditTaskI {
+    TaskName: string,
+    Status: boolean,
+    Description: string,
+    Date: string,
+    Importance: string,
+    UserName: string
+}

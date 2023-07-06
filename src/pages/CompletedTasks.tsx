@@ -1,11 +1,9 @@
-import { FolderCheck } from "react-bootstrap-icons";
+import { CompletedTasksGrid } from "../components/tasks/CompletedTasksGrid";
 
 const CompletedTasks = () => {
   return (
-    <div id="father" className="h-100">
-      <h2>
-        <FolderCheck /> Completed Tasks
-      </h2>
+    <div className="text-center h-100">
+      <CompletedTasksGrid />
     </div>
   )
 }

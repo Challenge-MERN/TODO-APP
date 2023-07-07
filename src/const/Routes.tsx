@@ -30,11 +30,11 @@ export const routes: RoutePropsI[] = [
             {
                 path: PATHS.CREATE_TASK,
                 element: lazy(async () => await import('../pages/CreateTask'))
-            },
-            {
-                path: PATHS.SETTINGS,
-                element: lazy(async () => await import('../pages/Settings'))
-            },
+            }
         ]
     },
+    {
+        path: '*',
+        element: lazy(async () => await import('../components/login/Login'))
+    }
 ]

@@ -3,10 +3,10 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { LoginI, ResponseAuthUserI } from '../../interfaces/User';
 import { useState } from 'react';
-// import Alert from 'react-bootstrap/Alert';
 import { SaveToken } from '../../services/users';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AppName } from '../AppName';
 
 const login = () => {
   const [userName, setUserName] = useState('');
@@ -59,6 +59,7 @@ const login = () => {
   return (
     <div>
       <section id='principal'>
+        <AppName />
         <div id='form'>
           <form onSubmit={evt => {
             evt.preventDefault();
@@ -94,12 +95,18 @@ const login = () => {
               <p>Aún no tienes una cuenta?</p>
               <Link id='registrate' className='ms-2' to='/sign-up'>Registrate!</Link>
             </div>
-            <div id='forgot'>
+            {/* <div id='forgot'>
               <Link id='f-pass' to=''>Olvide mi contraseña!</Link>
-            </div>
+            </div> */}
           </form>
         </div>
         <ToastContainer />
+      </section>
+      <section id='background'>
+        <div className='air air1'></div>
+        <div className='air air2'></div>
+        <div className='air air3'></div>
+        <div className='air air4'></div>
       </section>
     </div>
   )

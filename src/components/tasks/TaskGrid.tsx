@@ -8,7 +8,7 @@ import { PATHS } from '../../const/Paths';
 
 
 export const TaskGrid = () => {
-    const [info, setInfo] = useState<PendingTasksI[]>();
+    const [, setInfo] = useState<PendingTasksI[]>();
     const User = sessionStorage.getItem('USER') || '';
     let hiddenLink = true;
     const letsGo = '>>>';

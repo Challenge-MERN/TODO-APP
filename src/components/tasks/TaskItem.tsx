@@ -1,4 +1,4 @@
-import { ChangeStatusI, PendingTasksI, TaskResponseDataI, NewTaskI } from '../../interfaces/Tasks';
+import { ChangeStatusI, PendingTasksI, TaskResponseDataI } from '../../interfaces/Tasks';
 import Swal from 'sweetalert2';
 import { EditTask } from './EditTask';
 import { ShowModal } from './ShowModal';
@@ -104,8 +104,8 @@ export const TaskItem = ({ task, updateTasks, allTasks }: TaskItemProps) => {
 
     return (
         <>
-            <div className="list-group-item d-flex justify-content-between border p-3">
-                <span className="d-flex align-items-center">
+            <div className="list-group-item d-flex justify-content-between border">
+                <span className="d-flex align-items-center ps-2">
                     <EditTask key={task._id} editTask={editTask} task={task} />
                     {task.Task_Name}
                 </span>

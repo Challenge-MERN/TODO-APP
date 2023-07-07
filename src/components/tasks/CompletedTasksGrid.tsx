@@ -5,7 +5,6 @@ import { useTasksFetchPetitions } from "../../hooks/useTasksFetchPetitions";
 import { METHODS } from "../../const/Methods";
 import { getUserName } from "../../services/users";
 import { PendingTasksI } from "../../interfaces/Tasks";
-import { TaskItem } from "./TaskItem";
 import { CompletedTaskItem } from "./CompletedTaskItem";
 
 export const CompletedTasksGrid = () => {
@@ -26,7 +25,7 @@ export const CompletedTasksGrid = () => {
 
     return (
         <>
-            <div className="h-100" id="father2">
+            <div id="father2">
                 <h2 className="mt-4">
                     <FolderCheck className="me-2" /> {message}
                 </h2>

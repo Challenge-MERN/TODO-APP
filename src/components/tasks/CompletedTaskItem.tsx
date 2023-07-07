@@ -9,8 +9,8 @@ interface CompletedTaskItemProps {
 export const CompletedTaskItem = ({ task }: CompletedTaskItemProps) => {
     return (
         <>
-            <div className="list-group-item d-flex justify-content-between border p-3" >
-                <span className="d-flex align-items-center">
+            <div className="list-group-item d-flex justify-content-between border" >
+                <span className="ps-2 d-flex align-items-center">
                     {task.Task_Name}
                 </span>
                 <div className='p-2'>

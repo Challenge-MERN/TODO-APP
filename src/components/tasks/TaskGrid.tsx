@@ -27,7 +27,7 @@ export const TaskGrid = () => {
 
     return (
         <>
-            <div className='h-100' id='father2'>
+            <div id='father2'>
                 <h2 className='mt-4'>
                     <Journals className='me-2' />
                     {dataResponse.message}

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { PATHS } from '../../const/Paths';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { logOut as logout } from '../../services/users';
-import { LayoutWtf, PersonCircle, HouseFill, Clipboard2DataFill, Clipboard2CheckFill, Clipboard2PlusFill, GearFill } from 'react-bootstrap-icons';
+import { LayoutWtf, PersonCircle, HouseFill, Clipboard2DataFill, Clipboard2CheckFill, Clipboard2PlusFill } from 'react-bootstrap-icons';
 
 export const Navigation = () => {
     const navigate = useNavigate();

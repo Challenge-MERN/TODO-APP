@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NewTaskI, PendingTasksI } from '../../interfaces/Tasks';
+import { NewTaskI } from '../../interfaces/Tasks';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { getToken, getUserName } from '../../services/users';

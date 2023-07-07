@@ -1,0 +1,138 @@
+#principal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 157, 39, 0.711);
+}
+
+#form {
+    padding-bottom: 1rem;
+    background-color: rgba(21, 16, 16, 0.879);
+    border-radius: 1.5rem 1.5rem 0 1.5rem;
+    box-shadow: 15px 15px 15px 5px rgba(0, 99, 56, 0.6);
+}
+
+#title {
+    margin-top: 1rem;
+    color: white;
+}
+
+#submit {
+    margin: 1rem;
+    text-align: center;
+}
+
+#sign-in {
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#registrate {
+    text-decoration: none;
+    color: rgb(0, 176, 211);
+}
+
+#userName,
+#pass,
+#email {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 0 2rem;
+    color: white;
+}
+
+#formulario {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+@media (min-width: 1080px) {
+    #form {
+        width: 35vw;
+        height: 55vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    #form {
+        width: 60vw;
+        height: 55vh;
+    }
+}
+
+@media (max-width: 800px) {
+    #form {
+        width: 80vw;
+        height: 55vh;
+    }
+}
+
+/* -------------- */
+
+section .air {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+}
+
+section .air.air1 {
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+section .air.air2 {
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+section .air.air3 {
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+section .air.air4 {
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0px;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        background-position-x: -1000px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}

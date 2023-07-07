@@ -32,12 +32,18 @@ export const TaskGrid = () => {
     return (
         <>
             <div id='father2'>
-                <h2 hidden={!hiddenLink} className='mt-4'>
-                    <Journals className='me-2' />
-                    {dataResponse.message}
-                </h2>
                 {
-                    !isLoading && (<Link className='mt-5 btn btn-outline-warning' hidden={hiddenLink} to={directTo}>{buttonContent} {letsGo}</Link>)
+                    !isLoading && (
+                        <h2 className='mt-4'>
+                            <Journals className='me-2' />
+                            {dataResponse.message}
+                        </h2>
+                    )
+                }
+                {
+                    !isLoading && (
+                        <Link className='mt-5 btn btn-outline-warning' hidden={hiddenLink} to={directTo}>{buttonContent} {letsGo}</Link>
+                    )
                 }
                 <div className='container-fluid p-3' hidden={!hiddenLink} id='content2'>
                     {

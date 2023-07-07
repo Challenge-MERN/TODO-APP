@@ -24,11 +24,17 @@ export const CompletedTasksGrid = () => {
     return (
         <>
             <div id="father2">
-                <h2 className="mt-4">
-                    <FolderCheck className="me-2" /> {message}
-                </h2>
                 {
-                    !isLoading && (<Link className='mt-5 btn btn-outline-primary' hidden={hiddenLink} to={directTo}>{buttonContent} {letsGo}</Link>)
+                    !isLoading && (
+                        <h2 className="mt-4">
+                            <FolderCheck className="me-2" /> {message}
+                        </h2>
+                    )
+                }
+                {
+                    !isLoading && (
+                        <Link className='mt-5 btn btn-outline-primary' hidden={hiddenLink} to={directTo}>{buttonContent} {letsGo}</Link>
+                    )
                 }
                 <div className="container-fluid p-3" hidden={!hiddenLink} id='contentCompleted'>
                     {

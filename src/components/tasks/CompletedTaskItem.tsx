@@ -1,5 +1,5 @@
-import { PendingTasksI } from "../../interfaces/Tasks"
-import { ShowModal } from "./ShowModal"
+import { PendingTasksI } from "../../interfaces/Tasks";
+import { ShowCompletedTask } from "./ShowCopletedTask";
 
 interface CompletedTaskItemProps {
     key?: string,
@@ -14,7 +14,7 @@ export const CompletedTaskItem = ({ task }: CompletedTaskItemProps) => {
                     {task.Task_Name}
                 </span>
                 <div className='p-2'>
-                    <ShowModal key={task._id} task={task} />
+                    <ShowCompletedTask key={task._id} task={task} />
                 </div>
             </div>
         </>

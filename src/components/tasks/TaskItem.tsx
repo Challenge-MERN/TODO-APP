@@ -1,5 +1,5 @@
 import { ChangeStatusI, PendingTasksI, TaskResponseDataI } from '../../interfaces/Tasks';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { EditTask } from './EditTask';
 import { ShowModal } from './ShowModal';
 import { Trash2Fill, Check2Circle } from 'react-bootstrap-icons';

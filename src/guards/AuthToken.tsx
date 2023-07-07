@@ -1,23 +1,45 @@
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { PrincipalPropsI } from "../interfaces/Principal"
-import { PATHS } from '../const/Paths';
 import { getUserName, logOut } from '../services/users';
-import { getPendingTasks } from '../helpers/getPendingTasks';
-import { useEffect } from 'react';
-import Swal from 'sweetalert2';
+import { getTasksFetchPetitions } from '../helpers/getTasksFetchPetitions';
+import { METHODS } from '../const/Methods';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
+
 
 const AuthToken = ({ children }: PrincipalPropsI) => {
     const navigate = useNavigate();
     const userName = getUserName();
 
     const token = sessionStorage.getItem('ACCESS_TOKEN') || null;
-    console.log('estou entradnosd asd alk lsak jfas fasfl ks hflkjs')
+
     const validToken = async () => {
         if (!token) {
             navigate('/');
         } else {
             try {
-                await getPendingTasks(userName);
+                const method = METHODS.GET;
+                const url = `/task/get-pendingTasks/${userName}`;
+                const response = await getTasksFetchPetitions({ method, url });
+                if (response.status === 'FAILED') {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Sesión expirada!',
+                        text: 'Es necesario volver a iniciar sesión.',
+                        allowEnterKey: false,
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        showCancelButton: false,
+                        showConfirmButton: true,
+                        confirmButtonColor: 'blue',
+                        confirmButtonText: 'Iniciar Sesión'
+                    }).then((res) => {
+                        if (res.isConfirmed) {
+                            logOut();
+                            navigate('/');
+                            window.location.reload();
+                        }
+                    });
+                }
             } catch (err) {
                 Swal.fire({
                     icon: 'info',
@@ -34,15 +56,14 @@ const AuthToken = ({ children }: PrincipalPropsI) => {
                     if (res.isConfirmed) {
                         logOut();
                         navigate('/');
+                        window.location.reload();
                     }
                 });
             }
         }
     }
 
-    useEffect(() => {
-        validToken();
-    }, [])
+    validToken();
 
     return (
         <>

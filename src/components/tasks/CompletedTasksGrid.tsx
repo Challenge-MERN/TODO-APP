@@ -17,8 +17,6 @@ export const CompletedTasksGrid = () => {
 
     const { dataResponse, isLoading } = useTasksFetchPetitions({ method, url });
 
-    console.log('--> ', dataResponse.data);
-
     dataResponse.data.data.length === 0 ? hiddenLink = false : hiddenLink = true;
 
     const { data, message } = dataResponse.data;

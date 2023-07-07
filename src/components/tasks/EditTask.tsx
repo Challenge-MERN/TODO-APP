@@ -5,7 +5,7 @@ import { PencilSquare } from "react-bootstrap-icons";
 import { IMPORTANCE } from "../../const/TaskImportance";
 import { getUserName } from "../../services/users";
 import Form from 'react-bootstrap/Form';
-import Swal from "sweetalert2";
+import Swal from "sweetalert2/dist/sweetalert2.all.js";
 import { METHODS } from "../../const/Methods";
 import { getTasksFetchPetitions } from "../../helpers/getTasksFetchPetitions";
 
@@ -39,7 +39,7 @@ export const EditTask = ({ task, editTask }: TaskItemProps) => {
             UserName: getUserName(),
             Status: task.Status
         }
-        if (changesExists(newTask)) {
+        if (changesExists(newTask) && newTask.Importance !== IMPORTANCE[0]) {
             Swal.fire({
                 icon: 'info',
                 title: 'Importante!',
@@ -77,6 +77,15 @@ export const EditTask = ({ task, editTask }: TaskItemProps) => {
                         setShow(false);
                     }
                 }
+            });
+        } else if (newTask.Importance === IMPORTANCE[0]) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Ingresa información válida!',
+                text: `Importacia "${IMPORTANCE[0]}" no es válida.`,
+                showConfirmButton: true,
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: 'blue'
             });
         } else {
             Swal.fire({

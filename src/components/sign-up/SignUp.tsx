@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { NewUserI, ResponseAuthUserI, ResponseValidateRegisterI } from '../../interfaces/User';
 import { SaveToken } from '../../services/users';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
+import { AppName } from '../AppName';
 
 const SignUp = () => {
   const [userName, setUserName] = useState('');
@@ -137,6 +138,7 @@ const SignUp = () => {
   return (
     <div>
       <section id='principal'>
+        <AppName />
         <div id='form'>
           <form onSubmit={evt => {
             evt.preventDefault();

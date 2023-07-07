@@ -40,7 +40,6 @@ export const TaskForm = () => {
                 Importance: importance,
                 UserName: getUserName()
             }
-            console.log(task);
             try {
                 const response = await fetch(api, {
                     method: 'POST',

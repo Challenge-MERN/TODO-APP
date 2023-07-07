@@ -1,10 +1,36 @@
-@media (max-width: 680px) {
+/* @media (max-width: 680px) {
   #slideBar {
     min-width: 40rem;
   }
-}
+} */
 
 #menu {
   width: 240px;
   background-color: rgb(118, 33, 33);
+}
+
+#menu2 {
+  background-color: rgb(118, 33, 33);
+}
+
+#ul-nav {
+  height: 85%;
+}
+
+@media (max-width: 680px) {
+  #slideBar {
+    display: none;
+  }
+  #topBar{
+    width: 100vw;
+  }
+}
+
+@media (min-width: 680px) {
+  #topBar {
+    display: none;
+  }
+  #slideBar {
+    height: 100vh;
+  }
 }

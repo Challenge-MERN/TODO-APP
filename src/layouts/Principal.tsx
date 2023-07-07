@@ -1,12 +1,13 @@
 import { Navigation } from '../components/navbar/Navbar';
 import { PrincipalPropsI } from '../interfaces/Principal';
+import './Principal.css';
 
 const Principal = ({ children }: PrincipalPropsI) => {
     return (
         <>
-            <div  className='d-flex justify-content-start' >
+            <div id='principalLayout'>
                 <Navigation />
-                <div className='w-100 p-5' style={{minWidth: '35rem'}}>
+                <div id='childrens'>
                     {children}
                 </div>
             </div>

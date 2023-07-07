@@ -14,3 +14,14 @@ export interface ResponseAuthUserI {
     status: string,
     data: SaveTokenI
 }
+
+export interface ResponseValidateRegisterI {
+    status: string,
+    data: string
+}
+
+export interface NewUserI {
+    UserName: string,
+    Mail: string,
+    Password: string
+}

@@ -138,7 +138,9 @@ const SignUp = () => {
   return (
     <div>
       <section id='principal'>
-        <AppName />
+        <div id='cabecera'>
+          <AppName />
+        </div>
         <div id='form'>
           <form onSubmit={evt => {
             evt.preventDefault();

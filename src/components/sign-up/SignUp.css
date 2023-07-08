@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh;
     display: flex;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 157, 39, 0.711);
@@ -12,6 +13,11 @@
     background-color: rgba(21, 16, 16, 0.879);
     border-radius: 1.5rem 1.5rem 0 1.5rem;
     box-shadow: 15px 15px 15px 5px rgba(0, 99, 56, 0.6);
+}
+
+#cabecera {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 #title {
@@ -92,7 +98,7 @@
     #form {
         font-size: small;
         width: 80%;
-        height: 70%;
+        height: 65%;
         padding: 1rem;
     }
     h4 {

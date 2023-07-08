@@ -141,8 +141,8 @@ export const Navigation = () => {
                             <ul id='ul-nav' className="d-flex flex-column justify-content-between align-items-center navbar-nav fs-5 justify-content-end flex-grow-1">
                                 <div>
                                     {routes.map((route, index) => (
-                                        <li className='pb-4' key={index}>
-                                            <Link to={route.path} className="nav-link text-light" aria-current="page" onClick={handleOffcanvasClose}>{route.icon} {route.name}</Link>
+                                        <li key={index}>
+                                            <Link to={route.path} className="nav-link text-light" onClick={handleOffcanvasClose}>{route.icon} {route.name}</Link>
                                         </li>
                                     ))}
                                 </div>

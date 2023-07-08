@@ -63,3 +63,15 @@
         width: 50%;
     }
 }
+
+@media (max-width: 480px) {
+    #content2,
+    #contentCompleted,
+    #content, #filter {
+        width: 90%;
+    }
+
+    #filtrado {
+        width: 75%;
+    }
+}

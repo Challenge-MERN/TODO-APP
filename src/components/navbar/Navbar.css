@@ -17,6 +17,10 @@
   height: 85%;
 }
 
+div > li {
+  padding: 0.3rem;
+}
+
 @media (max-width: 680px) {
   #slideBar {
     display: none;
@@ -24,6 +28,10 @@
   #topBar{
     width: 100vw;
   }
+  #ul-nav {
+    height: 55%;
+  }
+  
 }
 
 @media (min-width: 680px) {
@@ -33,4 +41,5 @@
   #slideBar {
     height: 100vh;
   }
+  
 }

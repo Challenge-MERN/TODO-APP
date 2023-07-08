@@ -21,3 +21,17 @@
         height: 100vh;
     }
 }
+
+@media (max-width: 480px) {
+    #principalLayout {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        height: 100vh;
+    }
+    #childrens {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+    }
+}

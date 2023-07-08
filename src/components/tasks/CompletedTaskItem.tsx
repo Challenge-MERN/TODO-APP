@@ -10,12 +10,10 @@ export const CompletedTaskItem = ({ task }: CompletedTaskItemProps) => {
     return (
         <>
             <div className="list-group-item d-flex justify-content-between border" style={{fontWeight: 'bold'}}>
-                <span className="ps-2 d-flex align-items-center">
-                    Tarea: {task.Task_Name}
-                </span>
-                <span className="ps-2 d-flex align-items-center">
-                    Día realizada: {task.Date_Completion.split(/T/)[0]}
-                </span>
+                <div className="ps-2 d-flex flex-column align-items-center w-100">           
+                    <span>Día realizada:</span>
+                    <span>{task.Date_Completion.split(/T/)[0]}</span>
+                </div>
                 <div className='p-2'>
                     <ShowCompletedTask key={task._id} task={task} />
                 </div>

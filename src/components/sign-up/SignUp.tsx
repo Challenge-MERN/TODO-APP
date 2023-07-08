@@ -144,7 +144,7 @@ const SignUp = () => {
             evt.preventDefault();
             createUser(userName, password, email);
           }} id='formulario'>
-            <h4 className='text-center pt-3' id='title'>Registrarse</h4>
+            <h4 className='text-center' id='title'>Registrarse</h4>
             <div id='userName'>
               <label className='mb-1'>Usuario:</label>
               <input
@@ -185,7 +185,7 @@ const SignUp = () => {
               }
             </div>
             <div id='submit'>
-              <button className='ps-5 pe-5 btn btn-outline-info' type='submit'>Registrarse</button>
+              <button className='btn btn-outline-info' type='submit'>Registrarse</button>
             </div>
             <div id='sign-in'>
               <p>Ya tienes una cuenta?</p>

@@ -29,27 +29,30 @@ export const ShowCompletedTask = ({ task }: TaskItemProps) => {
         size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>{task.Task_Name}</Modal.Title>
+          <Modal.Title className="text-center w-100">Tarea: {task.Task_Name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <table className="table">
-            <thead>
-              <tr className="text-center">
-                <th>Descripción</th>
-                <th>Importancia</th>
-                <th>Fecha compromiso</th>
-                <th>Fecha realizada</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="text-center">
-                <td>{task.Description}</td>
-                <td>{task.Importance}</td>
-                <td>{task.Date}</td>
-                <td>{task.Date_Completion.split(/T/)[0]}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="ps-5">
+            <div>
+              <span className="fw-bold">Descripción:</span><br />
+              <span className="ps-3">{task.Description}</span>
+            </div>
+            <div>
+              <br />
+              <span className="fw-bold">Importancia:</span><br />
+              <span className="ps-3">{task.Importance}</span>
+            </div>
+            <div>
+              <br />
+              <span className="fw-bold">Fecha compromiso:</span><br />
+              <span className="ps-3">{task.Date}</span>
+            </div>
+            <div>
+              <br />
+              <span className="fw-bold">Fecha realizada:</span><br />
+              <span className="ps-3">{task.Date_Completion.split(/T/)[0]}</span>
+            </div>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>

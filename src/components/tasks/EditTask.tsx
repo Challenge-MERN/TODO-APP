@@ -121,7 +121,7 @@ export const EditTask = ({ task, editTask }: TaskItemProps) => {
 
     return (
         <>
-            <Button variant="outline-primary me-2" onClick={handleShow}>
+            <Button variant="outline-primary me-2 p-1" onClick={handleShow}>
                 <PencilSquare />
             </Button>
 

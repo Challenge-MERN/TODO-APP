@@ -105,15 +105,15 @@ export const TaskItem = ({ task, updateTasks, allTasks }: TaskItemProps) => {
     return (
         <>
             <div className="list-group-item d-flex justify-content-between border">
-                <span className="d-flex align-items-center ps-2">
+                <span className="w-50 d-flex align-items-center ps-2">
                     <EditTask key={task._id} editTask={editTask} task={task} />
                     {task.Task_Name}
                 </span>
-                <div className='p-2'>
-                    <button className="me-2 btn btn-outline-danger" onClick={deleteAction} title="Eliminar"><Trash2Fill /></button>
+                <div className='d-flex align-items-center p-2'>
+                    <button className="me-2 btn btn-outline-danger p-1" onClick={deleteAction} title="Eliminar"><Trash2Fill /></button>
 
                     <ShowModal key={task._id} task={task} />
-                    <button className="btn btn-outline-success ms-2" onClick={changeStatus} title="Completar"><Check2Circle /></button>
+                    <button className="btn btn-outline-success p-1 ms-2" onClick={changeStatus} title="Completar"><Check2Circle /></button>
                 </div>
             </div>
             <ToastContainer />

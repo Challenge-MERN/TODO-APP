@@ -89,7 +89,7 @@ const login = () => {
               />
             </div>
             <div id='submit'>
-              <button className='ps-5 pe-5 btn btn-outline-success' type='submit'>Confirmar</button>
+              <button className='btn btn-outline-success' type='submit'>Confirmar</button>
             </div>
             <div id='sign-up'>
               <p>Aún no tienes una cuenta?</p>

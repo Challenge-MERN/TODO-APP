@@ -65,7 +65,7 @@ export const TaskGrid = () => {
                             }
                         })}
                 </div>
-                <h4 hidden={!hiddenLink} className='text-center'><Search /> FILTRAR</h4>
+                <h4 hidden={!hiddenLink} className='text-center pt-2'><Search /> FILTRAR</h4>
                 <div hidden={!hiddenLink} id='filtrado'>
                     <label className='pe-2'>Importancia:</label>
                     <select id='filter' className='form-control' value={selectedImportance} onChange={(e) => setSelectedImportance(e.target.value)}>

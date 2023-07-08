@@ -59,7 +59,9 @@ const login = () => {
   return (
     <div>
       <section id='principal'>
-        <AppName />
+        <div id='cabecera'>
+          <AppName />
+        </div>
         <div id='form'>
           <form onSubmit={evt => {
             evt.preventDefault();
@@ -93,7 +95,7 @@ const login = () => {
             </div>
             <div id='sign-up'>
               <p>Aún no tienes una cuenta?</p>
-              <Link id='registrate' className='ms-2' to='/sign-up'>Registrate!</Link>
+              <Link id='registrate' className='ms-2' to='/sign-up'>Regístrate!</Link>
             </div>
             {/* <div id='forgot'>
               <Link id='f-pass' to=''>Olvide mi contraseña!</Link>

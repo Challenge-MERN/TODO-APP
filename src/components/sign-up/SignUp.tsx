@@ -14,8 +14,10 @@ const SignUp = () => {
 
   const [showUserError, setShowUserError] = useState(false);
   const [showEmailError, setShowEmailError] = useState(false);
+  const [showPassError, setShowPassError] = useState(false);
   const [userError, setUserError] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [passError, setPassError] = useState('');
 
   const navigate = useNavigate();
   const URL_ROOT = import.meta.env.VITE_API;
@@ -71,6 +73,47 @@ const SignUp = () => {
     return data.status;
   }
 
+  const generatePasswordErrorMessage = () => {
+    let errorMessage = '';
+
+    if (!/(?=.*\d)/.test(password)) {
+      errorMessage += 'Debe contener al menos un dígito. ';
+    }
+
+    if (!/(?=.*[a-z])/.test(password)) {
+      errorMessage += 'Debe contener al menos una letra minúscula. ';
+    }
+
+    if (!/(?=.*[A-Z])/.test(password)) {
+      errorMessage += 'Debe contener al menos una letra mayúscula. ';
+    }
+
+    if (!/(?=.*[a-zA-Z])/.test(password)) {
+      errorMessage += 'Debe contener al menos un carácter alfanumérico. ';
+    }
+
+    if (!/.{5,}/.test(password)) {
+      errorMessage += 'Debe tener una longitud mínima de 5 caracteres. ';
+    }
+
+    return errorMessage.trim();
+  };
+
+  const validatePassword = () => {
+    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{5,}$/;
+    if (password.length <= 5) {
+      setPassError('Contraseña inválida!, longitud debe ser mayor a 5 caracteres')
+      setShowPassError(true);
+      return false;
+    } else if (!regex.test(password)) {
+      const errorMessage = generatePasswordErrorMessage();
+      setPassError(errorMessage);
+      setShowPassError(true);
+      return false;
+    }
+    return true;
+  }
+
   const clearForm = () => {
     setEmail('');
     setPassword('');
@@ -80,6 +123,7 @@ const SignUp = () => {
   const createUser = async (user: string, pass: string, email: string) => {
     const userStatus = await validateUserName();
     const emailStatus = await validateEmail();
+    const passStatus = validatePassword();
 
     if (userStatus === 'FALSE' && emailStatus === 'FALSE') {
       setShowUserError(true);
@@ -90,6 +134,8 @@ const SignUp = () => {
     } else if (userStatus === 'OK' && emailStatus === 'FALSE') {
       setShowEmailError(true);
       setShowUserError(false);
+    } else if (!passStatus) {
+      setShowEmailError(true);
     } else {
       setShowUserError(false);
       setShowEmailError(false);
@@ -171,6 +217,9 @@ const SignUp = () => {
                 type="password"
                 required
               />
+              {
+                showPassError && (<span className='text-center text-danger'>{passError}</span>)
+              }
             </div>
             <div id='email'>
               <label className='mb-1 mt-2'>Correo electrónico:</label>

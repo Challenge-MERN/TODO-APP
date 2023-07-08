@@ -16,6 +16,7 @@ export const TaskForm = () => {
     const importancia = IMPORTANCE;
 
     const api = `${import.meta.env.VITE_API}/task/create-task`;
+    const currentDate = new Date().toISOString().split('T')[0];
 
     const sendTaskData = async () => {
         if (importance === 'Selecciona una opción' || importance === '') {
@@ -127,6 +128,7 @@ export const TaskForm = () => {
                             type="date"
                             value={date}
                             onChange={evt => setDate(evt.target.value)}
+                            min={currentDate}
                             required
                         />
                     </div>

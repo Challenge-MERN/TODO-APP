@@ -49,7 +49,7 @@ export const ShowCompletedTask = ({ task }: TaskItemProps) => {
             </div>
             <div>
               <br />
-              <span className="fw-bold">Fecha realizada:</span><br />
+              <span className="fw-bold">Fecha de realización:</span><br />
               <span className="ps-3">{task.Date_Completion.split(/T/)[0]}</span>
             </div>
           </div>

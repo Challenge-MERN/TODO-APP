@@ -98,12 +98,12 @@ export const TaskForm = () => {
                     sendTaskData();
                 }}>
                     <div>
-                        <label className='pb-2'>Alias de tarea:</label>
+                        <label className='pb-2'>Título de tarea:</label>
                         <input
                             className='form-control'
                             type="text"
                             value={taskName}
-                            placeholder='Alias'
+                            placeholder='Título'
                             onChange={evt => setTaskName(evt.target.value)}
                             required
                         />
@@ -122,7 +122,7 @@ export const TaskForm = () => {
                         </FloatingLabel>
                     </div>
                     <div>
-                        <label className='pb-2 pt-2'>Fecha esperada a realizar:</label>
+                        <label className='pb-2 pt-2'>Fecha estimada de finalización:</label>
                         <input
                             className='form-control'
                             type="date"

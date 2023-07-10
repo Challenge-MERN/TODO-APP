@@ -111,6 +111,7 @@ const SignUp = () => {
       setShowPassError(true);
       return false;
     }
+    setShowPassError(false);
     return true;
   }
 
